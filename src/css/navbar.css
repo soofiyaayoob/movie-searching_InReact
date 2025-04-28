@@ -1,0 +1,74 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 60px;
+    background-color:black;
+    transition: width 0.3s ease;
+    overflow: visible;
+    /* z-index: 1000; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+ /* flex-grow: 100; */
+  }
+  
+  .sidebar:hover {
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* position: static; */
+  }
+  
+  .navItem {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.648);
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .navItem:hover {
+    color: white;
+   
+   
+  }
+  .navItem.active {
+    color: white; /* Make icon and label white */
+  }
+  
+  .navItem svg {
+    min-width: 24px;
+    /* fill: white; */
+  }
+  
+  .label {
+    margin-left: 15px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .sidebar:hover .label {
+    opacity: 1;
+    /* position: absolute; */
+  }
+  /* .navItem svg {
+    fill: white;
+  } */
+  
+  
+  /* optional background overlay */
+  /* .sidebar:hover::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 60px;
+    width: calc(100% - 60px);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 5;
+  } */
+  
