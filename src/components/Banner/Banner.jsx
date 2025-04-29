@@ -1,4 +1,4 @@
-import "../css/Banner.css";
+import "./Banner.css";
 import { useRef, useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 
@@ -14,9 +14,9 @@ const fetchMovieDetails = async (movieId) => {
   return data;
 };
 
-function Banner({ title, fetchUrl }) {
+function Banner({  fetchUrl }) {
   const { data: movies, isLoading, error } = useQuery({
-    queryKey: [title, fetchUrl],
+    queryKey: ['banner',fetchUrl],
     queryFn: () => fetchMovies(fetchUrl),
   });
 

@@ -17,7 +17,7 @@ function App() {
         <Router>
       <div className="app-container">
         <Navbar />
-        <main className="main-content" style={{ backgroundColor: "black",color:"white" }}>
+        <main >
           <Routes>
             <Route
               path="/"

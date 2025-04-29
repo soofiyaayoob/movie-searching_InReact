@@ -1,17 +1,10 @@
 
   .app-container {
     display: flex;
-    height: 100vh;
-    overflow: hidden;
+    /* height: 100vh; */
     
     padding-left: 60px;
-  
-  }
-  
-  .main-content {
-         
-    flex-grow: 1;
     padding-top: 20px;
-   
   }
+  
   

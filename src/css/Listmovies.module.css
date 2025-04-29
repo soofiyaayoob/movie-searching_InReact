@@ -1,0 +1,122 @@
+
+.movieCardsSlider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+
+.sliderViewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.movieCardWrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  scroll-behavior: smooth;
+
+  overflow-x: auto;
+  padding: 10px 0;
+}
+.movieCardWrapper::-webkit-scrollbar {
+  display: none;
+}
+.movieCardWrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+.movieCard {
+  flex: 0 0 170px;
+  height: 300px;
+  margin: 0 10px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(100, 98, 98, 0.8);
+  position: relative;
+ 
+}
+.movieCard:hover {
+  transform: scale(1.05);
+}
+
+
+.arrowIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 10;
+}
+.arrowIconLeft { left: 10px; }
+.arrowIconRight { right: 10px; }
+
+
+.listMoviesContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+}
+.listMoviesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+.moviePoster {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.movieDetails {
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  right: 10px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.movieActions {
+  display: flex;
+  gap: 10px;
+  margin: 5px 0;
+}
+.watchButton,
+.addButton {
+  border: 1px solid white;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.watchButton { background: white; color: black; }
+.addButton   { background: transparent; color: white; }
+.movieDescription {
+  font-size: 0.8rem;
+  max-height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.viewAll{
+margin-right: 5px;
+color: grey;
+font: bold;
+}
