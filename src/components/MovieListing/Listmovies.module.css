@@ -1,0 +1,386 @@
+
+.movieCardsSlider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+
+.sliderViewport {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+.movieCardWrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  scroll-behavior: smooth;
+
+  overflow-x: hidden;
+  padding: 10px 0;
+  position: relative;
+  z-index: 1;
+}
+.movieCardWrapper::-webkit-scrollbar {
+  display: none;
+}
+.movieCardWrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+.movieCard {
+  flex: 0 0 170px;
+  height: 300px;
+  margin: 0 10px;
+  background-size: cover;
+  background-position: center;
+  /* transition: transform 0.3s ease; */
+  box-shadow: 0 0 10px rgba(100, 98, 98, 0.8);
+  position: relative;
+  /* z-index: -1; */
+ 
+}
+.movieCard:hover {
+  /* transform: scale(1.05); */
+}
+
+
+.arrowIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 10;
+}
+.arrowIconLeft { left: 10px; }
+.arrowIconRight { right: 10px; }
+
+
+.listMoviesContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+}
+.listMoviesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+.moviePoster {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.movieDetails {
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  right: 10px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.movieActions {
+  display: flex;
+  gap: 10px;
+  margin: 5px 0;
+}
+.watchButton,
+.addButton {
+  border: 1px solid white;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.watchButton { background: white; color: black; }
+.addButton   { background: transparent; color: white; }
+.movieDescription {
+  font-size: 0.8rem;
+  max-height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.viewAll{
+margin-right: 5px;
+color: grey;
+font: bold;
+cursor: pointer;
+}
+/* 
+
+.movie-info {
+  font-size: 13px;
+  color: #ccc;
+  margin-bottom: 8px;
+}
+
+.info-inline {
+  margin-right: 6px;
+}
+
+.overview {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.movie-card:hover .hover-overlay {
+  display: flex;
+}
+
+.overlay-poster {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.overlay-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.watch-now {
+  background: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 400px;
+  background-color: #141414;
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 10;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.movie-poster {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.movieCard {
+  position: relative;
+  width: 180px;
+  height: 270px;
+  margin: 10px;
+}
+
+.moviePoster {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.hoverOverlay {
+  position: absolute;
+  top: -100px;
+  left: -60px;
+  width: 300px;
+  height: 400px;
+  background-color: #141414;
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.overlayPoster {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.overlayButtons {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.watchNow {
+  background: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.addWatchlist {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.movieInfo {
+  font-size: 13px;
+  color: #ccc;
+  margin-bottom: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.infoInline {
+  margin-right: 4px;
+}
+
+.overview {
+  font-size: 13px;
+  color: #aaa;
+} */
+
+
+/* Add these styles to your Listmovies.module.css */
+
+
+/* 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+/* Add these updated styles to your Listmovies.module.css */
+.movieDetailOverlay {
+  position: absolute;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 16px;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+  animation: fadeIn 0.2s ease-in-out;
+  width: 340px;
+
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.overlayContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.posterImage {
+  width: 100px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.movieInfo {
+  flex: 1;
+}
+
+.movieTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.movieMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 12px;
+}
+
+.movieOverview {
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.watchNow {
+  flex: 1;
+  padding: 10px;
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.watchNow:hover {
+  background-color: #1565c0;
+}
+
+.addWatchlist {
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.addWatchlist:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}

@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import "./App.css";
+import Viewall from './components/ViewAll/Viewall';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ function App() {
                 <Home/>
               }
             />
+            <Route path="/view-all" element={<Viewall />} />
             <Route path="/login" element={<Login />} />
           </Routes>
         </main>
