@@ -10,15 +10,13 @@ function Search() {
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(searchTerm);
 
-  // Debounce the search term
   useEffect(() => {
     const timeout = setTimeout(() => {
       setDebouncedSearchTerm(searchTerm);
-    }, 500); // 500ms delay
+    }, 500); 
     return () => clearTimeout(timeout);
   }, [searchTerm]);
 
-  // Fetch logic
   const fetchMovies = async () => {
     const query = debouncedSearchTerm.trim();
     const url = query
@@ -36,7 +34,7 @@ function Search() {
     keepPreviousData: true,
   });
 
-  // Dispatch to Redux
+  
   useEffect(() => {
     if (data) {
       const title = debouncedSearchTerm

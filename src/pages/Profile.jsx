@@ -68,7 +68,7 @@ function Profile() {
           </div>
         </div>
       )}
-      {/* ... your styles ... */
+      {
       <style>{`
         .profile {
           display: flex;

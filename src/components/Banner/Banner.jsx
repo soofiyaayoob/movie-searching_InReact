@@ -38,6 +38,7 @@ const handleWatchNow = () => {
 
 const handleAddToWatchlist = (movie) => {
   console.log("Adding to watchlist:", movie); // Check if it's a valid movie object
+  alert("Movie added to your watchlist!");
   if (!user) {
     navigate("/profile");
     return;
@@ -76,7 +77,7 @@ const handleAddToWatchlist = (movie) => {
 
       setShowLeftArrow(scrollLeft > 0);
 
-      setShowRightArrow(scrollLeft + clientWidth < scrollWidth - 5); // 5px buffer
+      setShowRightArrow(scrollLeft + clientWidth < scrollWidth - 5); 
     };
 
     checkScrollPosition();
@@ -138,7 +139,7 @@ const handleAddToWatchlist = (movie) => {
               {bannerMovie?.overview?.substring(0, 150)}...
             </p>
 
-            {/* Genres */}
+           
             <p className="banner-genres">
               {isDetailsLoading
                 ? "#Loading Genres"
@@ -147,7 +148,8 @@ const handleAddToWatchlist = (movie) => {
                     .join(" | ") || "#NoGenres"}
             </p>
 
-            {/* Buttons */}
+           
+           
             <div className="banner-buttons">
               <button className="watch-button" onClick={handleWatchNow}>
                 ▶ Watch Now
@@ -163,7 +165,7 @@ const handleAddToWatchlist = (movie) => {
             </div>
           </div>
 
-          {/* RIGHT SIDE */}
+          
           <div className="banner-right">
             {showLeftArrow && (
               <button className="arrow-button arrow-left" onClick={scrollLeft}>

@@ -10,7 +10,7 @@ export default function Viewall() {
   const title = useSelector((state) => state.selectedTitle);
   console.log("Movies in Redux: ", movies);
   const cardRefs = useRef([]);
-  cardRefs.current = movies.map((_, i) => cardRefs.current[i] || React.createRef()); // ✅ Add here
+  cardRefs.current = movies.map((_, i) => cardRefs.current[i] || React.createRef()); 
 
   const [hoveredMovie, setHoveredMovie] = useState(null);
   const [position, setPosition] = useState({ top: 0, left: 0 });

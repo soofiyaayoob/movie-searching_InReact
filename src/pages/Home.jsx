@@ -1,6 +1,6 @@
 // src/pages/Home.jsx
 
-import { categories } from "../assets/MovieCategories"; // adjust path if needed
+import { categories } from "../assets/MovieCategories"; 
 import Banner from "../components/Banner/Banner";
 import ListMovies from "../components/Categorie/ListMovies";
 

@@ -4,7 +4,7 @@ import { addToWatchlist } from "../../redux/actions";
 import { useNavigate } from "react-router-dom"; 
 import { useDispatch, useSelector } from "react-redux";
 
-const MovieDetailOverlay = ({ movie, position }) => {
+const MovieDetailOverlay = ({ movie }) => {
   const posterUrl = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
     : `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
@@ -21,15 +21,15 @@ const MovieDetailOverlay = ({ movie, position }) => {
     }
     navigate("/player");
   };
+  const isInWatchlist = (movie) => watchlist.some((m) => m.id === movie.id);
 
   const handleAddToWatchlist = () => {
     if (!user) {
       navigate("/profile");
       return;
     }
-
-    const alreadyAdded = watchlist.some((m) => m.id === movie.id);
-    if (alreadyAdded) {
+   
+    if (isInWatchlist(movie)) {
       alert("Movie is already in your watchlist!");
       return;
     }
@@ -38,15 +38,12 @@ const MovieDetailOverlay = ({ movie, position }) => {
     alert("Movie added to your watchlist!");
   };
 
-  const isInWatchlist = watchlist.some((m) => m.id === movie.id);
+  
 
   return (
     <div
       className={styles.movieDetailOverlay}
-      style={{
-        top: `${position.top}px`,
-        left: `${position.left}px`,
-      }}
+ 
     >
       <div className={styles.overlayContent}>
         <img
@@ -79,9 +76,9 @@ const MovieDetailOverlay = ({ movie, position }) => {
         <button
           className={styles.addWatchlist}
           onClick={handleAddToWatchlist}
-          disabled={isInWatchlist}
+          disabled={isInWatchlist(movie)} 
         >
-          {isInWatchlist ? "✔" : "+"}
+          {isInWatchlist(movie) ? "✔" : "+"} 
         </button>
       </div>
     </div>

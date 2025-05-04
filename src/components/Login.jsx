@@ -10,8 +10,8 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const fakeUser = { username };  // In a real app, validate the password too
-    dispatch(login(fakeUser));  // Dispatch login action to Redux
+    const fakeUser = { username };  
+    dispatch(login(fakeUser)); 
   };
 
   return (
