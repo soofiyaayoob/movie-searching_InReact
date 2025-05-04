@@ -5,6 +5,7 @@ const initialState = {
   user: null,
   selectedMovies: [],
   selectedTitle: "",
+  watchlist: [],
 };
 
 export const rootReducer = produce((draft, action) => {
@@ -20,7 +21,9 @@ export const rootReducer = produce((draft, action) => {
       draft.selectedMovies = action.payload.movies;
       draft.selectedTitle = action.payload.title;
       break;
-
+    case "ADD_TO_WATCHLIST":
+      draft.watchlist.push(action.payload);
+      break;
     default:
       break;
   }

@@ -1,19 +1,23 @@
-import React, { useState, useRef } from "react";
+import React, { forwardRef } from "react";
 import styles from "./Listmovies.module.css";
 
-const MovieCard = ({ movie, onMouseEnter, onMouseLeave }) => {
-  const cardRef = useRef(null);
 
+   
+
+
+
+
+const MovieCard = forwardRef(({ movie, onMouseEnter, onMouseLeave }, ref) => {
   const posterUrl = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
     : `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
 
   return (
     <div
-      ref={cardRef}
+      ref={ref}
       className={styles.movieCard}
-      onMouseEnter={() => onMouseEnter(cardRef)}
-      onMouseLeave={onMouseLeave}
+      onMouseOver={() => onMouseEnter(ref)}
+      onMouseOut={onMouseLeave}
     >
       <div
         className={styles.moviePoster}
@@ -21,6 +25,6 @@ const MovieCard = ({ movie, onMouseEnter, onMouseLeave }) => {
       />
     </div>
   );
-};
+});
 
-export default MovieCard;
+export default React.memo(MovieCard);  

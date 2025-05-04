@@ -9,7 +9,11 @@ export const login = (user) => ({
   });
   
 
-
+  export const addToWatchlist = (movie) => ({
+    type: "ADD_TO_WATCHLIST",
+    payload: movie,
+  });
+  
 
 export const SET_SELECTED_MOVIES = "SET_SELECTED_MOVIES";
 
